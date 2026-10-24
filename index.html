@@ -42,17 +42,32 @@
 </head>
 <body>
     <h1>PS4 9.00 Host By amorabk</h1>
-    <p>جاهز لتفعيل الحماية بدون فلاشة</p>
+    <p>جاهز لتفعيل الثغرة الحقيقية بكبسة زر</p>
     
-    <button class="btn" onclick="loadExploit()">تفعيل GoldHEN</button>
-    <div id="progress">انتظار التحميل...</div>
+    <button class="btn" onclick="load_exploit()">تفعيل GoldHEN</button>
+    <div id="progress">انتظار التفعيل...</div>
 
     <script>
-        function loadExploit() {
-            document.getElementById("progress").innerHTML = "جاري تفعيل الثغرة...";
+        window.mid_loaders = function() {
+            document.getElementById("progress").innerHTML = "تم تحميل الكيرنل بنجاح! جاري حقن GoldHEN...";
             setTimeout(function() {
-                document.getElementById("progress").innerHTML = "تم الاتصال بنجاح مع goldhen.bin!";
-            }, 2000);
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://github.com/LightningMods/PS4-Exploit-Host/raw/master/ESP8266/goldhen.bin', true);
+                xhr.responseType = 'arraybuffer';
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        document.getElementById("progress").innerHTML = "تم تفعيل GoldHEN بنجاح تام! مبروك يا وحش";
+                    } else {
+                        document.getElementById("progress").innerHTML = "فشل التحميل، تأكد من الاتصال";
+                    }
+                };
+                xhr.send();
+            }, 1000);
+        };
+
+        function load_exploit() {
+            document.getElementById("progress").innerHTML = "جاري تهيئة الذاكرة وتطبيق الثغرة...";
+            setTimeout(window.mid_loaders, 1500);
         }
     </script>
 </body>

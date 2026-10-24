@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+    <meta charset="utf-8">
+    <title>PS4 9.00 GoldHEN - amorabk</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ffcc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 45px;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+        .btn {
+            background-color: transparent;
+            color: #00ffcc;
+            border: 2px solid #00ffcc;
+            padding: 15px 30px;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ffcc;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #00ffcc;
+            color: #0d0d0d;
+            box-shadow: 0 0 25px #00ffcc;
+        }
+        #progress {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>PS4 9.00 Host By amorabk</h1>
+    <p>جاهز لتفعيل الحماية بدون فلاشة</p>
+    
+    <button class="btn" onclick="loadExploit()">تفعيل GoldHEN</button>
+    <div id="progress">انتظار التحميل...</div>
+
+    <script>
+        function loadExploit() {
+            document.getElementById("progress").innerHTML = "جاري تفعيل الثغرة...";
+            setTimeout(function() {
+                document.getElementById("progress").innerHTML = "تم الاتصال بنجاح مع goldhen.bin!";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
